@@ -1,4 +1,5 @@
 const alternateMain = require('alternate-main');
+const relativeMain = require('relative-main');
 const alternateFiles = require('alternate-files/foo');
 const alternateFilesNested = require('alternate-files/nested/foo');
 const alternateFilesInternal = require('alternate-files/internal-import');
@@ -9,6 +10,7 @@ const ignored = require('ignored');
 
 console.log('In browser should be true and false otherwise');
 console.log('alternateMain:', alternateMain.isBrowser);
+console.log('relativeMain:', relativeMain.isBrowser);
 console.log('alternateFiles:', alternateFiles.isBrowser);
 console.log('alternateFilesNested:', alternateFilesNested.isBrowser);
 console.log('alternateFilesInternal:', alternateFilesInternal.isBrowser);

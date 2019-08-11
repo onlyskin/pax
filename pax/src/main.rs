@@ -1758,8 +1758,15 @@ impl BrowserField {
                 if !to.is_explicitly_relative() {
                     to.prepend_resolving(Path::new("."));
                 }
+
+                let mut from = main.to_owned();
+
+                if !from.is_explicitly_relative() {
+                    from.prepend_resolving(Path::new("."));
+                }
+
                 BrowserSubstitutionMap(map! {
-                    main.to_owned() => BrowserSubstitution::Replace(to),
+                    from => BrowserSubstitution::Replace(to),
                 })
             }
             BrowserField::Complex(map) => map,
